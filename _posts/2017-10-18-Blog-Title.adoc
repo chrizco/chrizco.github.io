@@ -7,6 +7,6 @@
 
 :hp-tags: ubPress, Blog, Open_Source
 
-= Blog Title
+:hp-image: https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg
 
-:hp-image: /images/cover-image.jpg
+= Blog Title
