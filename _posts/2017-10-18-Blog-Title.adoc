@@ -10,3 +10,10 @@
 :hp-image: https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg
 
 = Blog Title
+
+[source,java]
+----
+if(x < 5) {
+    x = 0;
+}
+----
