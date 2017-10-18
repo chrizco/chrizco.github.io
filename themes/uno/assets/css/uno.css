@@ -1352,8 +1352,8 @@ hr {
   left: 0;
   width: 100%;
   height: 42px;
-  background: rgba(13, 71, 77, 0.98);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   text-align: center; }
 
 .btn-mobile-menu__icon,
@@ -1384,9 +1384,21 @@ nav {
     border-color: #FFF;
     color: #FFF;
     opacity: .8; }
-    .navigation__item a:hover {
-      color: #FFF;
-      border-color: #FFF;
+  .navigation__item .blog:hover {
+      color: rgb(100, 225, 50);
+      border-color: rgb(100, 225, 50);
+      opacity: 1; }
+  .navigation__item .twitter:hover {
+      color: rgb(0, 198, 255);
+      border-color: rgb(0, 198, 255);
+      opacity: 1; }
+  .navigation__item .github:hover {
+      color: rgb(222, 128, 255);
+      border-color: rgb(222, 128, 255);
+      opacity: 1; }
+  .navigation__item .mail:hover {
+      color: rgb(254, 251, 74);
+      border-color: rgb(254, 251, 74);
       opacity: 1; }
 
 .navigation--social {
@@ -1632,10 +1644,11 @@ input[type="tel"] {
     left: 0;
     width: 100%;
     padding: 20px 0;
-    background: rgba(51, 51, 51, 0.98);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
-    .navigation-wrapper.visible {
-      display: block; }
+    background: rgb(30, 30, 30);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+  
+  .navigation-wrapper.visible {
+    display: block; }
 
   .cover-navigation {
     display: block;
