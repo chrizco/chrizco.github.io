@@ -2,10 +2,11 @@
   "meta": {
     "username": "chrizco",
     "repositoryName": "chrizco.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "theme": {
-    "name": "casper"
+    "name": "uno"
   },
   "urls": {
     "site": "https://chrizco.github.io",
@@ -22,5 +23,27 @@
       null,
       null
     ]
+  },
+  "site": {
+    "title": "Blog de Chris",
+    "description": "Apasionado por el desarrollo de software, los videojuegos y series de tv",
+    "logo": "",
+    "cover": "https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg",
+    "delay": "",
+    "postsPerPage": "5",
+    "googleAnalytics": "",
+    "disqus": "blog-de-chris"
+  },
+  "socialnetwork": {
+    "email": "chrispc.dev@gmail.com",
+    "github": "https://github.com/chrizco",
+    "twitter": "https://twitter.com/0xchriz",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
