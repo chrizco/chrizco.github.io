@@ -11,7 +11,7 @@
   "urls": {
     "site": "https://chrizco.github.io",
     "hubpress": "https://chrizco.github.io",
-    "theme": "//chrizco.github.io/themes/saga",
+    "theme": "//chrizco.github.io/themes/uno",
     "images": "https://chrizco.github.io/images"
   },
   "initialisationConfigComponent": {
