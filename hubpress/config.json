@@ -6,12 +6,12 @@
     "cname": ""
   },
   "theme": {
-    "name": "saga"
+    "name": "uno"
   },
   "urls": {
     "site": "https://chrizco.github.io",
     "hubpress": "https://chrizco.github.io",
-    "theme": "//chrizco.github.io/themes/uno",
+    "theme": "//chrizco.github.io/themes/saga",
     "images": "https://chrizco.github.io/images"
   },
   "initialisationConfigComponent": {
