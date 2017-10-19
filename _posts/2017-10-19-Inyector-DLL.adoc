@@ -5,7 +5,8 @@
 A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, + iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.
 
 == DLL (Dynamic Link Library)
-[%hardbreaks][%hardbreaks]
+[%hardbreaks]
+[%hardbreaks]
 Son archivos que contienen código ejecutable y datos que pueden ser usados por uno o más programas. Mediante el uso de DLL, un programa puede ser modularizado en componentes separados. Exclusivos de los sistemas operativos Windows, tienen ".dll" como extensión.
 Inyección DLL
 
