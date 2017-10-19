@@ -13,4 +13,4 @@ Este es el primer post del blog, se dice que el primer paso es el más difícil,
 
 Para abordar dichos temas, escribiré un post para ilustrarlos, en los cuales explicaré conceptos, utilizando imágenes, videos. También se incluirán fragmentos de código, los proyectos realizados se alojaran en un repositorio en github para que puedan acceder a ellos.
 
-Sin aburrirlos más, les mando un saludos.
+Sin aburrirlos más, me despidos.
