@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508449513712" />
+    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508449813905" />
 
     <link rel="canonical" href="https://chrizco.github.io/2017/10/19/Inyector-DLL.html" />
     <meta name="referrer" content="origin" />
@@ -174,7 +174,7 @@
 <h2 id="_dll_dynamic_link_library">DLL (Dynamic Link Library)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Son archivos que contienen código ejecutable y datos que + pueden ser usados por uno o más programas. Mediante el uso de DLL, un programa puede ser modularizado en componentes separados. Exclusivos de los sistemas operativos Windows, tienen ".dll" como extensión.
+<p>Son archivos que contienen código ejecutable y datos que pueden ser usados por uno o más programas. Mediante el uso de DLL, un programa puede ser modularizado en componentes separados. Exclusivos de los sistemas operativos Windows, tienen ".dll" como extensión.<br>
 Inyección DLL</p>
 </div>
 <div class="paragraph">
@@ -183,10 +183,10 @@ Inyección DLL</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_inyector_dll">Inyector DLL</h2>
+<h2 id="_inyector">Inyector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Es el programa usado para llevar acabo la Inyección DLL.<br></p>
+<p>Es el programa que lleva acabo la inyección de la DLL.</p>
 </div>
 <div class="paragraph">
 <p>Existen diversas formas o técnicas para inyectar DLL&#8217;s, en este post explicare la más utilizada. Esta consiste en lo siguiente; Windows provee funciones para crear un hilo en cierta posición de memoria de un proceso externo, para ello reservamos memoria en el proceso, escribimos en ella la ruta de la DLL que queremos inyectar y creamos un hilo pasandole como parámetros el proceso, la dirección de memoria donde se encuentra la función LoadLibrary y la dirección de memoria que reservamos que escribimos anteriormente.</p>
@@ -387,7 +387,7 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 <h2 id="_demostraci_n">Demostración</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Seguramente más de uno esté pensando, ¿Qué utilidad tiene + agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.</p>
+<p>Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.</p>
 </div>
 </div>
 </div>
@@ -399,7 +399,7 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 What is a DLL? - Microsoft<br>
 DLL injection - Wikipedia<br>
 FindWindowEx - Microsoft<br>
-GetWindowThreadProcessId
+GetWindowThreadProcessId<br>
 OpenProcess - Microsoft<br>
 VirtualAllocEx - Microsoft<br>
 WriteProcessMemory - Microsoft<br>
@@ -452,7 +452,7 @@ CreateRemoteThread - MIcrosoft</p>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508449513712"></script>
+    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508449813905"></script>
     
 
 </body>
