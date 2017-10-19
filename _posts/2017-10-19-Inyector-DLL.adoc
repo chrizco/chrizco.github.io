@@ -38,18 +38,19 @@ Sin más preámbulo pasemos a la parte que todos esperaban (aah sí XD).
 
 === Injector.h
 
-[code language="cpp"]
+[source,java]
+----
 #ifndef INJECTOR_H
 #define INJECTOR_H
 
 class Injector
 {
-public:
-void inject(char *dll, char *process);
+    public:
+    void inject(char *dll, char *process);
 };
 
 #endif // INJECTOR_H
-[/code]
+----
 
 === Injector.cpp
 
