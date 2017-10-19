@@ -952,7 +952,7 @@ h4,
 h5,
 h5 {
   margin-top: .8em;
-  margin-bottom: .4em;
+  margin-bottom: .1em;
   font-family: "Roboto Slab", serif;
   font-weight: lighter;
   color: #333333;
@@ -1142,7 +1142,7 @@ hr {
   padding: 60px 0; }
 
 .post-meta {
-  margin: 0 0 .4em 0;
+  margin: 0 0 2em 0;
   color: #c7c7c7; }
 
 .post-meta__date {
@@ -1435,6 +1435,9 @@ i {
   font-size: 22px;
   display: block;
   position: relative; }
+
+.post-title {
+  margin-bottom: .1em;}
 
 .post-list {
   margin: 0;
