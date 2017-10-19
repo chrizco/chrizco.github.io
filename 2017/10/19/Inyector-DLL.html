@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508447531023" />
+    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508448563141" />
 
     <link rel="canonical" href="https://chrizco.github.io/2017/10/19/Inyector-DLL.html" />
     <meta name="referrer" content="origin" />
@@ -36,6 +36,9 @@
     <meta property="og:description" content="A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) Son archivos que contienen código ejecutable y datos" />
     <meta property="og:url" content="https://chrizco.github.io/2017/10/19/Inyector-DLL.html" />
     <meta property="article:published_time" content="2017-10-19T00:00:00.000Z" />
+    <meta property="article:tag" content="c++" />
+    <meta property="article:tag" content="programacion" />
+    
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Inyector DLL" />
     <meta name="twitter:description" content="A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) Son archivos que contienen código ejecutable y datos" />
@@ -56,6 +59,7 @@
     "headline": "Inyector DLL",
     "url": "https://chrizco.github.io/2017/10/19/Inyector-DLL.html",
     "datePublished": "2017-10-19T00:00:00.000Z",
+    "keywords": "c++, programacion",
     "description": "A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) Son archivos que contienen código ejecutable y datos"
 }
     </script>
@@ -67,7 +71,7 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 </head>
-<body class="post-template no-js">
+<body class="post-template tag-c tag-programacion no-js">
 
     <span class="mobile btn-mobile-menu">
         <i class="icon icon-list btn-mobile-menu__icon"></i>
@@ -153,12 +157,12 @@
     <header class="post-header">
       <h1 class="post-title">Inyector DLL</h1>
       <div class="post-meta">
-        <time datetime="19 Oct 2017" class="post-meta__date date">19 Oct 2017</time> &#8226; <span class="post-meta__tags tags"></span>
+        <time datetime="19 Oct 2017" class="post-meta__date date">19 Oct 2017</time> &#8226; <span class="post-meta__tags tags">on <a href="https://chrizco.github.io/tag/c/">c++</a>, <a href="https://chrizco.github.io/tag/programacion/">programacion</a></span>
         <span class="post-meta__author author"><img src="https://avatars0.githubusercontent.com/u/32885837?v&#x3D;4" alt="profile image for Chris Cornejo" class="avatar post-meta__avatar" /> by Chris Cornejo</span>
       </div>
     </header>
 
-    <section class="post">
+    <section class="post tag-c tag-programacion">
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -193,7 +197,7 @@ Inyección DLL</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_herramientas">Herramientas</h2>
+<h2 id="_herramientas_br">Herramientas<br></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -216,8 +220,8 @@ Inyección DLL</p>
 <div class="sect1">
 <h2 id="_proyecto_1_inyector">Proyecto 1: Inyector</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_injector_h">Injector.h</h3>
+<div class="sect3">
+<h4 id="_injector_h">Injector.h</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">#ifndef INJECTOR_H
@@ -225,109 +229,107 @@ Inyección DLL</p>
 
 class Injector
 {
-    public:
-    void inject(char *dll, char *process);
+    public:void inject(char *dll, char *process);
 };
 
 #endif // INJECTOR_H</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_injector_cpp">Injector.cpp</h3>
-<div class="paragraph">
-<p>#include &lt;windows.h&gt;</p>
-</div>
-<div class="paragraph">
-<p>#include "Injector.h"</p>
-</div>
-<div class="paragraph">
-<p>void Injector::inject(char *dll, char *windowTitle)
+<div class="sect3">
+<h4 id="_injector_cpp">Injector.cpp</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">#include &lt;windows.h&gt;
+
+#include "Injector.h"
+
+// Función que lleva acabo la inyección
+void Injector::inject(char *dll, char *windowTitle)
 {
-HWND window;
-DWORD pid;
-HANDLE process;
-LPVOID memory;
-SIZE_T write = 0;</p>
+    HWND window;
+    DWORD pid;
+    HANDLE process;
+    LPVOID memory;
+    SIZE_T write = 0;
+
+    // Buscamos la ventana del proceso a inyectar
+    window = FindWindowEx(0, 0, 0, windowTitle);
+
+    // Buscamos el proceso a inyectar
+    GetWindowThreadProcessId(window, &amp;pid);
+
+    // Abrimos el proceso
+    process = OpenProcess(PROCESS_ALL_ACCESS, false, pid);
+
+    // Reservamos memoria en el proceso para la DLL
+    memory = VirtualAllocEx(process, 0, strlen(dll),
+    MEM_COMMIT|MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+
+    // Escribimos en el proceso
+    WriteProcessMemory(process, memory, (LPVOID)dll, strlen(dll), &amp;write);
+
+    // Obtenemos el modulo de la DLL Kernel32
+    HMODULE hModule = LoadLibrary("Kernel32.dll");
+    // Obtenemos la dirección en memoria en la que se encuentra la
+    // función LoadLibrary
+    FARPROC tsr = GetProcAddress(hModule, "LoadLibraryA");
+
+    // Creamos un hilo en el proceso
+    CreateRemoteThread(process, 0, 0, (LPTHRED_START_ROUTINE)tsr,memory, 0, 0);
+}</code></pre>
 </div>
-<div class="paragraph">
-<p>window = FindWindowEx(0, 0, 0, windowTitle);</p>
-</div>
-<div class="paragraph">
-<p>GetWindowThreadProcessId(window, &amp;pid);</p>
-</div>
-<div class="paragraph">
-<p>process = OpenProcess(PROCESS_ALL_ACCESS, false, pid);</p>
-</div>
-<div class="paragraph">
-<p>memory = VirtualAllocEx(process, 0, strlen(dll),
-MEM_COMMIT|MEM_RESERVE, PAGE_EXECUTE_READWRITE);</p>
-</div>
-<div class="paragraph">
-<p>WriteProcessMemory(process, memory, (LPVOID)dll, strlen(dll), &amp;write);</p>
-</div>
-<div class="paragraph">
-<p>HMODULE hModule = LoadLibrary("Kernel32.dll");
-FARPROC tsr = GetProcAddress(hModule, "LoadLibraryA");</p>
-</div>
-<div class="paragraph">
-<p>CreateRemoteThread(process, 0, 0, (LPTHRED_START_ROUTINE)tsr,
-memory, 0, 0);
-}
-[/code]</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_main_cpp">Main.cpp</h3>
-<div class="paragraph">
-<p>#include &lt;cstring&gt;
-using std::strcpy;</p>
-</div>
-<div class="paragraph">
-<p>#include &lt;iostream&gt;
+<div class="sect3">
+<h4 id="_main_cpp">Main.cpp</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">#include &lt;cstring&gt;
+using std::strcpy;
+
+#include &lt;iostream&gt;
 using std::cout;
-using std::cin;</p>
-</div>
-<div class="paragraph">
-<p>#include &lt;string&gt;
-using std::string;</p>
-</div>
-<div class="paragraph">
-<p>#include "Injector.h"</p>
-</div>
-<div class="paragraph">
-<p>int main()
+using std::cin;
+
+#include &lt;string&gt;
+using std::string;
+
+#include "Injector.h"
+
+int main()
 {
-string aux;</p>
+    string aux;
+
+    // Pide la ruta de la DLL
+    cout &lt;&lt; "Path DLL: ";
+    // Lee la ruta y la coloca en aux
+    cin &gt;&gt; aux;
+
+    // Convierte la variable aux a char*
+    char *dll = new char[aux.length() + 1];
+    strcpy(dll, aux.c_str());
+
+    // Pide el título de la ventana
+    cout &lt;&lt; "Window Title: ";
+    // Lee el título de la ventana y lo coloca en aux
+    cin &gt;&gt; aux;
+
+    // Convierte la variable aux a char*
+    char *windowTitle = new char[aux.length() + 1];
+    strcpy(windowTitle, aux.c_str());
+
+    // Instancia un objeto de la clase Injetor
+    Injector injector;
+    // Llama al método inject
+    injector.inject(dll, windowTitle);
+
+    delete [] dll;
+    delete [] windowTitle;
+
+    return 0;
+}</code></pre>
 </div>
-<div class="paragraph">
-<p>cout &lt;&lt; "Path DLL: ";
-cin &gt;&gt; aux;</p>
-</div>
-<div class="paragraph">
-<p>char *dll = new char[aux.length() + 1];
-strcpy(dll, aux.c_str());</p>
-</div>
-<div class="paragraph">
-<p>cout &lt;&lt; "Window Title: ";
-cin &gt;&gt; aux;</p>
-</div>
-<div class="paragraph">
-<p>char *windowTitle = new char[aux.length() + 1];
-strcpy(windowTitle, aux.c_str());</p>
-</div>
-<div class="paragraph">
-<p>Injector injector;
-injector.inject(dll, windowTitle);</p>
-</div>
-<div class="paragraph">
-<p>delete [] dll;
-delete [] windowTitle;</p>
-</div>
-<div class="paragraph">
-<p>return 0;
-}
-[/code]</p>
 </div>
 </div>
 </div>
@@ -335,45 +337,45 @@ delete [] windowTitle;</p>
 <div class="sect1">
 <h2 id="_proyecto_2_dll">Proyecto 2: DLL</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_main_cpp_2">Main.cpp</h3>
-<div class="paragraph">
-<p>#include &lt;windows.h&gt;</p>
-</div>
-<div class="paragraph">
-<p>void message()
+<div class="sect3">
+<h4 id="_main_cpp_2">Main.cpp</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">#include &lt;windows.h&gt;
+
+// Función que muestra un cuadro de dialogo
+void message()
 {
-MessageBoxA(0, "Bienvenido a Quickhub!", "DLL Message", 0);
-}</p>
-</div>
-<div class="paragraph">
-<p>BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
-{
-switch (fdwReason)
-{
-case DLL_PROCESS_ATTACH:</p>
-</div>
-<div class="paragraph">
-<p>CreateThread(0, 0, (LPTHREAD_START_ROUTINE)message, 0, 0, 0);
-break;</p>
-</div>
-<div class="paragraph">
-<p>case DLL_PROCESS_DETACH:
-break;</p>
-</div>
-<div class="paragraph">
-<p>case DLL_THREAD_ATTACH:
-break;</p>
-</div>
-<div class="paragraph">
-<p>case DLL_THREAD_DETACH:
-break;
-}</p>
-</div>
-<div class="paragraph">
-<p>return TRUE; // succesful
+    MessageBoxA(0, "Bienvenido a Quickhub!", "DLL Message", 0);
 }
-[/code]</p>
+
+BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+{
+    switch (fdwReason)
+    {
+        case DLL_PROCESS_ATTACH:
+            // attach to process
+            // return FALSE to fail DLL load
+            // Crea un hilo
+        CreateThread(0, 0, (LPTHREAD_START_ROUTINE)message, 0, 0, 0);
+            break;
+
+        case DLL_PROCESS_DETACH:
+            // detach from process
+            break;
+
+        case DLL_THREAD_ATTACH:
+            // attach to thread
+            break;
+
+        case DLL_THREAD_DETACH:
+            // detach from thread
+            break;
+    }
+
+    return TRUE; // succesful
+}</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>IMPORTANTE: si el programa en el vamos a realizar la inyección es de 32 bit, la DLL a inyectar debe ser compilada para 32 bit. Pasa lo mismo con los programas de 64 bit. No podemos inyectar una DLL compilada para 32 bit en un programa de 64 bit, ni viceversa.</p>
@@ -393,16 +395,16 @@ break;
 <h2 id="_referencias">Referencias</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>DLL - Wikipedia
-What is a DLL? - Microsoft
-DLL injection - Wikipedia
-FindWindowEx - Microsoft
+<p>DLL - Wikipedia<br>
+What is a DLL? - Microsoft<br>
+DLL injection - Wikipedia<br>
+FindWindowEx - Microsoft<br>
 GetWindowThreadProcessId
-OpenProcess - Microsoft
-VirtualAllocEx - Microsoft
-WriteProcessMemory - Microsoft
-LoadLibrary - Microsoft
-GetProcAddress - Microsoft
+OpenProcess - Microsoft<br>
+VirtualAllocEx - Microsoft<br>
+WriteProcessMemory - Microsoft<br>
+LoadLibrary - Microsoft<br>
+GetProcAddress - Microsoft<br>
 CreateRemoteThread - MIcrosoft</p>
 </div>
 </div>
@@ -450,7 +452,7 @@ CreateRemoteThread - MIcrosoft</p>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508447531023"></script>
+    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508448563141"></script>
     
 
 </body>
