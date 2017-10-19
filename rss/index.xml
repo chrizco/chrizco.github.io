@@ -1,4 +1,251 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Oct 2017 11:50:17 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Hello World!]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Oct 2017 21:12:11 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Inyector DLL]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dll_dynamic_link_library">DLL (Dynamic Link Library)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Son archivos que contienen código ejecutable y datos que pueden ser usados por uno o más programas. Mediante el uso de DLL, un programa puede ser modularizado en componentes separados. Exclusivos de los sistemas operativos Windows, tienen ".dll" como extensión.
+Inyección DLL</p>
+</div>
+<div class="paragraph">
+<p>Es una técnica utilizada para ejecutar código dentro de otro proceso. Comúnmente es utilizada para influir o alterar el comportamiento de un programa.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inyector_dll">Inyector DLL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es el programa usado para llevar acabo la Inyección DLL.</p>
+</div>
+<div class="paragraph">
+<p>Existen diversas formas o técnicas para inyectar DLL&#8217;s, en este post explicare la más utilizada. Esta consiste en lo siguiente; Windows provee funciones para crear un hilo en cierta posición de memoria de un proceso externo, para ello reservamos memoria en el proceso, escribimos en ella la ruta de la DLL que queremos inyectar y creamos un hilo pasandole como parámetros el proceso, la dirección de memoria donde se encuentra la función LoadLibrary y la dirección de memoria que reservamos que escribimos anteriormente.</p>
+</div>
+<div class="paragraph">
+<p>Para el desarrollo de este programa haremos uso del lenguaje de programación C++, aun  que no hace falta conocerlo para seguir el post, basta con tener conocimientos de POO.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_herramientas">Herramientas</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>IDE para C/C++</p>
+</li>
+<li>
+<p>Compilador para C/C++</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Yo utilizare CodeBlocks con MinGW (implementación de los compiladores GCC) de 32 bit para Windows, ambos los puedes descargar desde aquí.</p>
+</div>
+<div class="paragraph">
+<p>Sin más preámbulo pasemos a la parte que todos esperaban (aah sí XD).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_proyecto_1_inyector">Proyecto 1: Inyector</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_injector_h">Injector.h</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">#ifndef INJECTOR_H
+#define INJECTOR_H
+
+class Injector
+{
+    public:
+    void inject(char *dll, char *process);
+};
+
+#endif // INJECTOR_H</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_injector_cpp">Injector.cpp</h3>
+<div class="paragraph">
+<p>#include &lt;windows.h&gt;</p>
+</div>
+<div class="paragraph">
+<p>#include "Injector.h"</p>
+</div>
+<div class="paragraph">
+<p>void Injector::inject(char *dll, char *windowTitle)
+{
+HWND window;
+DWORD pid;
+HANDLE process;
+LPVOID memory;
+SIZE_T write = 0;</p>
+</div>
+<div class="paragraph">
+<p>window = FindWindowEx(0, 0, 0, windowTitle);</p>
+</div>
+<div class="paragraph">
+<p>GetWindowThreadProcessId(window, &amp;pid);</p>
+</div>
+<div class="paragraph">
+<p>process = OpenProcess(PROCESS_ALL_ACCESS, false, pid);</p>
+</div>
+<div class="paragraph">
+<p>memory = VirtualAllocEx(process, 0, strlen(dll),
+MEM_COMMIT|MEM_RESERVE, PAGE_EXECUTE_READWRITE);</p>
+</div>
+<div class="paragraph">
+<p>WriteProcessMemory(process, memory, (LPVOID)dll, strlen(dll), &amp;write);</p>
+</div>
+<div class="paragraph">
+<p>HMODULE hModule = LoadLibrary("Kernel32.dll");
+FARPROC tsr = GetProcAddress(hModule, "LoadLibraryA");</p>
+</div>
+<div class="paragraph">
+<p>CreateRemoteThread(process, 0, 0, (LPTHRED_START_ROUTINE)tsr,
+memory, 0, 0);
+}
+[/code]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_main_cpp">Main.cpp</h3>
+<div class="paragraph">
+<p>#include &lt;cstring&gt;
+using std::strcpy;</p>
+</div>
+<div class="paragraph">
+<p>#include &lt;iostream&gt;
+using std::cout;
+using std::cin;</p>
+</div>
+<div class="paragraph">
+<p>#include &lt;string&gt;
+using std::string;</p>
+</div>
+<div class="paragraph">
+<p>#include "Injector.h"</p>
+</div>
+<div class="paragraph">
+<p>int main()
+{
+string aux;</p>
+</div>
+<div class="paragraph">
+<p>cout &lt;&lt; "Path DLL: ";
+cin &gt;&gt; aux;</p>
+</div>
+<div class="paragraph">
+<p>char *dll = new char[aux.length() + 1];
+strcpy(dll, aux.c_str());</p>
+</div>
+<div class="paragraph">
+<p>cout &lt;&lt; "Window Title: ";
+cin &gt;&gt; aux;</p>
+</div>
+<div class="paragraph">
+<p>char *windowTitle = new char[aux.length() + 1];
+strcpy(windowTitle, aux.c_str());</p>
+</div>
+<div class="paragraph">
+<p>Injector injector;
+injector.inject(dll, windowTitle);</p>
+</div>
+<div class="paragraph">
+<p>delete [] dll;
+delete [] windowTitle;</p>
+</div>
+<div class="paragraph">
+<p>return 0;
+}
+[/code]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_proyecto_2_dll">Proyecto 2: DLL</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_main_cpp_2">Main.cpp</h3>
+<div class="paragraph">
+<p>#include &lt;windows.h&gt;</p>
+</div>
+<div class="paragraph">
+<p>void message()
+{
+MessageBoxA(0, "Bienvenido a Quickhub!", "DLL Message", 0);
+}</p>
+</div>
+<div class="paragraph">
+<p>BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+{
+switch (fdwReason)
+{
+case DLL_PROCESS_ATTACH:</p>
+</div>
+<div class="paragraph">
+<p>CreateThread(0, 0, (LPTHREAD_START_ROUTINE)message, 0, 0, 0);
+break;</p>
+</div>
+<div class="paragraph">
+<p>case DLL_PROCESS_DETACH:
+break;</p>
+</div>
+<div class="paragraph">
+<p>case DLL_THREAD_ATTACH:
+break;</p>
+</div>
+<div class="paragraph">
+<p>case DLL_THREAD_DETACH:
+break;
+}</p>
+</div>
+<div class="paragraph">
+<p>return TRUE; // succesful
+}
+[/code]</p>
+</div>
+<div class="paragraph">
+<p>IMPORTANTE: si el programa en el vamos a realizar la inyección es de 32 bit, la DLL a inyectar debe ser compilada para 32 bit. Pasa lo mismo con los programas de 64 bit. No podemos inyectar una DLL compilada para 32 bit en un programa de 64 bit, ni viceversa.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_demostraci_n">Demostración</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_referencias">Referencias</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>DLL - Wikipedia
+What is a DLL? - Microsoft
+DLL injection - Wikipedia
+FindWindowEx - Microsoft
+GetWindowThreadProcessId
+OpenProcess - Microsoft
+VirtualAllocEx - Microsoft
+WriteProcessMemory - Microsoft
+LoadLibrary - Microsoft
+GetProcAddress - Microsoft
+CreateRemoteThread - MIcrosoft</p>
+</div>
+</div>
+</div>]]></description><link>https://chrizco.github.io/2017/10/19/Inyector-DLL.html</link><guid isPermaLink="true">https://chrizco.github.io/2017/10/19/Inyector-DLL.html</guid><dc:creator><![CDATA[Chris Cornejo]]></dc:creator><pubDate>Thu, 19 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Hello World!]]></title><description><![CDATA[<div class="paragraph">
 <p>Este es el primer post del blog, se dice que el primer paso es el más difícil, así que lo difícil ya esta hecho. En este blog se trataran diversos temas, de las siguientes áreas: programación, electrónica, desarrollo de videojuegos, incluso series y películas relacionadas a estas áreas.</p>
 </div>
 <div class="paragraph">
