@@ -16,7 +16,7 @@ Es una técnica utilizada para ejecutar código dentro de otro proceso. Comúnme
 [%hardbreaks][%hardbreaks]
 Es el programa que lleva acabo la inyección de la DLL.
  
-Existen diversas formas o técnicas para inyectar DLL's, en este post explicare la más utilizada. Esta consiste en lo siguiente; Windows provee funciones para crear un hilo en cierta posición de memoria de un proceso externo, para ello reservamos memoria en el proceso, escribimos en ella la ruta de la DLL que queremos inyectar y creamos un hilo pasandole como parámetros el proceso, la dirección de memoria donde se encuentra la función LoadLibrary y la dirección de memoria que reservamos que escribimos anteriormente.
+Existen diversas formas de inyectar DLL's, en este post explicare la más facíl. Esta consiste en lo siguiente; Windows provee funciones para crear un hilo en cierta posición de memoria de un proceso externo, para ello reservamos memoria en el proceso, escribimos en ella la ruta de la DLL que queremos inyectar y creamos un hilo pasandole como parámetros el proceso, la dirección de memoria donde se encuentra la función LoadLibrary y la dirección de memoria que reservamos que escribimos anteriormente.
  
 Para el desarrollo de este programa haremos uso del lenguaje de programación C++, aun  que no hace falta conocerlo para seguir el post, basta con tener conocimientos de POO.
 
