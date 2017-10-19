@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Oct 2017 22:27:07 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Inyector DLL]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Oct 2017 22:35:07 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Inyector DLL]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, + iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.</p>
@@ -235,17 +235,17 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 <h2 id="_referencias">Referencias</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://es.wikipedia.org/wiki/Biblioteca_de_enlace_din%C3%A1mico">DLL - Wikipedia</a><br>
-<a href="https://support.microsoft.com/en-us/kb/815065">What is a DLL? - Microsoft</a><br>
-<a href="https://en.wikipedia.org/wiki/DLL_injection">DLL injection - Wikipedia</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633500(v=vs.85).aspx">FindWindowEx - Microsoft</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633522(v=vs.85).aspx">GetWindowThreadProcessId - Microsoft</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms684320(v=vs.85).aspx">OpenProcess - Microsoft</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa366890(v=vs.85).aspx">VirtualAllocEx - Microsoft</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms681674(v=vs.85).aspx">WriteProcessMemory - Microsoft</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms684175(v=vs.85).aspx">LoadLibrary - Microsoft</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms683212(v=vs.85).aspx">GetProcAddress - Microsoft</a><br>
-<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms682437(v=vs.85).aspx">CreateRemoteThread - MIcrosoft</a><br></p>
+<p><a href="https://es.wikipedia.org/wiki/Biblioteca_de_enlace_din%C3%A1mico" target="_blank">DLL - Wikipedia</a><br>
+<a href="https://support.microsoft.com/en-us/kb/815065" target="_blank">What is a DLL? - Microsof</a><br>
+<a href="https://en.wikipedia.org/wiki/DLL_injection" target="_blank">DLL injection - Wikipedi</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633500(v=vs.85).aspx" target="_blank">FindWindowEx - Microsof</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633522(v=vs.85).aspx" target="_blank">GetWindowThreadProcessId - Microsof</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms684320(v=vs.85).aspx" target="_blank">OpenProcess - Microsof</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa366890(v=vs.85).aspx" target="_blank">VirtualAllocEx - Microsof</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/esktop/ms681674(v=vs.85).aspx" target="_blank">WriteProcessMemory - Microsof</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms684175(v=vs.85).aspx" target="_blank">LoadLibrary - Microsoft</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms683212(v=vs.85).aspx" target="_blank">GetProcAddress - Microsoft</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms682437(v=vs.85).aspx" target="_blank">CreateRemoteThread - MIcrosoft</a><br></p>
 </div>
 </div>
 </div>]]></description><link>https://chrizco.github.io/2017/10/19/Inyector-DLL.html</link><guid isPermaLink="true">https://chrizco.github.io/2017/10/19/Inyector-DLL.html</guid><category><![CDATA[c++]]></category><category><![CDATA[programacion]]></category><dc:creator><![CDATA[Chris Cornejo]]></dc:creator><pubDate>Thu, 19 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Hello World!]]></title><description><![CDATA[<div class="paragraph">
