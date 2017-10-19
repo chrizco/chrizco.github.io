@@ -9,18 +9,18 @@
 
 = Inyector DLL
 
-A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.
+A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, + iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.
 
 == DLL (Dynamic Link Library)
 
-Son archivos que contienen código ejecutable y datos que pueden ser usados por uno o más programas. Mediante el uso de DLL, un programa puede ser modularizado en componentes separados. Exclusivos de los sistemas operativos Windows, tienen ".dll" como extensión.
+Son archivos que contienen código ejecutable y datos que + pueden ser usados por uno o más programas. Mediante el uso de DLL, un programa puede ser modularizado en componentes separados. Exclusivos de los sistemas operativos Windows, tienen ".dll" como extensión.
 Inyección DLL
 
 Es una técnica utilizada para ejecutar código dentro de otro proceso. Comúnmente es utilizada para influir o alterar el comportamiento de un programa.
 
 == Inyector DLL
 
-Es el programa usado para llevar acabo la Inyección DLL.
+Es el programa usado para llevar acabo la Inyección DLL. +
  
 Existen diversas formas o técnicas para inyectar DLL's, en este post explicare la más utilizada. Esta consiste en lo siguiente; Windows provee funciones para crear un hilo en cierta posición de memoria de un proceso externo, para ello reservamos memoria en el proceso, escribimos en ella la ruta de la DLL que queremos inyectar y creamos un hilo pasandole como parámetros el proceso, la dirección de memoria donde se encuentra la función LoadLibrary y la dirección de memoria que reservamos que escribimos anteriormente.
  
@@ -28,7 +28,7 @@ Para el desarrollo de este programa haremos uso del lenguaje de programación C+
 
 == Herramientas
 
-    * IDE para C/C++
+    * IDE para C/C++ +
     * Compilador para C/C++
 
 Yo utilizare CodeBlocks con MinGW (implementación de los compiladores GCC) de 32 bit para Windows, ambos los puedes descargar desde aquí.
@@ -193,7 +193,7 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 
 == Demostración
 
-Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.
+Seguramente más de uno esté pensando, ¿Qué utilidad tiene + agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.
 
 == Referencias
 
