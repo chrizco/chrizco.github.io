@@ -7,7 +7,7 @@
 
 :hp-tags: c++, programacion
 
-= Inyector DLL +
+= Inyector DLL
 
 A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.
 
@@ -26,7 +26,7 @@ Existen diversas formas o técnicas para inyectar DLL's, en este post explicare 
  
 Para el desarrollo de este programa haremos uso del lenguaje de programación C++, aun  que no hace falta conocerlo para seguir el post, basta con tener conocimientos de POO.
 
-== Herramientas +
+== Herramientas
 
     * IDE para C/C++
     * Compilador para C/C++
