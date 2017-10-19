@@ -22,6 +22,7 @@ Para el desarrollo de este programa haremos uso del lenguaje de programación C+
 
 == Herramientas	
     [%hardbreaks]
+    
     * IDE para C/C++ +
     * Compilador para C/C++
 
