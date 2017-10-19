@@ -32,7 +32,7 @@ Para el desarrollo de este programa haremos uso del lenguaje de programación C+
 Yo utilizare CodeBlocks con MinGW (implementación de los compiladores GCC) de 32 bit para Windows, ambos los puedes descargar desde aquí.
  
 
-Sin más preámbulo pasemos a la parte que todos esperaban (hay así XD).
+Sin más preámbulo pasemos a la parte que todos esperaban (aah sí XD).
 
 == Proyecto 1: Inyector
 
