@@ -5,6 +5,8 @@
 // :hp-tags: HubPress, Blog, Open_Source,
 // :hp-alt-title: My English Title
 
+:hp-tags: c++, programacion
+
 = Inyector DLL
 
 A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.
@@ -24,7 +26,7 @@ Existen diversas formas o técnicas para inyectar DLL's, en este post explicare 
  
 Para el desarrollo de este programa haremos uso del lenguaje de programación C++, aun  que no hace falta conocerlo para seguir el post, basta con tener conocimientos de POO.
 
-== Herramientas
+== Herramientas +
 
     * IDE para C/C++
     * Compilador para C/C++
@@ -36,7 +38,7 @@ Sin más preámbulo pasemos a la parte que todos esperaban (aah sí XD).
 
 == Proyecto 1: Inyector
 
-=== Injector.h
+==== Injector.h
 
 [source,java]
 ----
@@ -45,16 +47,16 @@ Sin más preámbulo pasemos a la parte que todos esperaban (aah sí XD).
 
 class Injector
 {
-    public:
-    void inject(char *dll, char *process);
+    public:void inject(char *dll, char *process);
 };
 
 #endif // INJECTOR_H
 ----
 
-=== Injector.cpp
+==== Injector.cpp
 
-[code language="cpp"]
+[source,java]
+----
 #include <windows.h>
 
 #include "Injector.h"
@@ -62,43 +64,43 @@ class Injector
 // Función que lleva acabo la inyección
 void Injector::inject(char *dll, char *windowTitle)
 {
-HWND window;
-DWORD pid;
-HANDLE process;
-LPVOID memory;
-SIZE_T write = 0;
+    HWND window;
+    DWORD pid;
+    HANDLE process;
+    LPVOID memory;
+    SIZE_T write = 0;
 
-// Buscamos la ventana del proceso a inyectar
-window = FindWindowEx(0, 0, 0, windowTitle);
+    // Buscamos la ventana del proceso a inyectar
+    window = FindWindowEx(0, 0, 0, windowTitle);
 
-// Buscamos el proceso a inyectar
-GetWindowThreadProcessId(window, &pid);
+    // Buscamos el proceso a inyectar
+    GetWindowThreadProcessId(window, &pid);
 
-// Abrimos el proceso
-process = OpenProcess(PROCESS_ALL_ACCESS, false, pid);
+    // Abrimos el proceso
+    process = OpenProcess(PROCESS_ALL_ACCESS, false, pid);
 
-// Reservamos memoria en el proceso para la DLL
-memory = VirtualAllocEx(process, 0, strlen(dll),
-MEM_COMMIT|MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+    // Reservamos memoria en el proceso para la DLL
+    memory = VirtualAllocEx(process, 0, strlen(dll),
+    MEM_COMMIT|MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 
-// Escribimos en el proceso
-WriteProcessMemory(process, memory, (LPVOID)dll, strlen(dll), &write);
+    // Escribimos en el proceso
+    WriteProcessMemory(process, memory, (LPVOID)dll, strlen(dll), &write);
 
-// Obtenemos el modulo de la DLL Kernel32
-HMODULE hModule = LoadLibrary("Kernel32.dll");
-// Obtenemos la dirección en memoria en la que se encuentra la
-// función LoadLibrary
-FARPROC tsr = GetProcAddress(hModule, "LoadLibraryA");
+    // Obtenemos el modulo de la DLL Kernel32
+    HMODULE hModule = LoadLibrary("Kernel32.dll");
+    // Obtenemos la dirección en memoria en la que se encuentra la
+    // función LoadLibrary
+    FARPROC tsr = GetProcAddress(hModule, "LoadLibraryA");
 
-// Creamos un hilo en el proceso
-CreateRemoteThread(process, 0, 0, (LPTHRED_START_ROUTINE)tsr,
-memory, 0, 0);
+    // Creamos un hilo en el proceso
+    CreateRemoteThread(process, 0, 0, (LPTHRED_START_ROUTINE)tsr,memory, 0, 0);
 }
-[/code]
+----
 
-=== Main.cpp
+==== Main.cpp
 
-[code language="cpp"]
+[source,cpp]
+----
 #include <cstring>
 using std::strcpy;
 
@@ -113,79 +115,79 @@ using std::string;
 
 int main()
 {
-string aux;
+    string aux;
 
-// Pide la ruta de la DLL
-cout << "Path DLL: ";
-// Lee la ruta y la coloca en aux
-cin >> aux;
+    // Pide la ruta de la DLL
+    cout << "Path DLL: ";
+    // Lee la ruta y la coloca en aux
+    cin >> aux;
 
-// Convierte la variable aux a char*
-char *dll = new char[aux.length() + 1];
-strcpy(dll, aux.c_str());
+    // Convierte la variable aux a char*
+    char *dll = new char[aux.length() + 1];
+    strcpy(dll, aux.c_str());
 
-// Pide el título de la ventana
-cout << "Window Title: ";
-// Lee el título de la ventana y lo coloca en aux
-cin >> aux;
+    // Pide el título de la ventana
+    cout << "Window Title: ";
+    // Lee el título de la ventana y lo coloca en aux
+    cin >> aux;
 
-// Convierte la variable aux a char*
-char *windowTitle = new char[aux.length() + 1];
-strcpy(windowTitle, aux.c_str());
+    // Convierte la variable aux a char*
+    char *windowTitle = new char[aux.length() + 1];
+    strcpy(windowTitle, aux.c_str());
 
-// Instancia un objeto de la clase Injetor
-Injector injector;
-// Llama al método inject
-injector.inject(dll, windowTitle);
+    // Instancia un objeto de la clase Injetor
+    Injector injector;
+    // Llama al método inject
+    injector.inject(dll, windowTitle);
 
-delete [] dll;
-delete [] windowTitle;
+    delete [] dll;
+    delete [] windowTitle;
 
-return 0;
+    return 0;
 }
-[/code]
+----
 
 == Proyecto 2: DLL
 
-=== Main.cpp
+==== Main.cpp
 
-[code language="cpp"]
+[source,java]
+----
 #include <windows.h>
 
 // Función que muestra un cuadro de dialogo
 void message()
 {
-MessageBoxA(0, "Bienvenido a Quickhub!", "DLL Message", 0);
+    MessageBoxA(0, "Bienvenido a Quickhub!", "DLL Message", 0);
 }
 
 BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
-switch (fdwReason)
-{
-case DLL_PROCESS_ATTACH:
-// attach to process
-// return FALSE to fail DLL load
+    switch (fdwReason)
+    {
+        case DLL_PROCESS_ATTACH:
+            // attach to process
+            // return FALSE to fail DLL load
+            // Crea un hilo
+        CreateThread(0, 0, (LPTHREAD_START_ROUTINE)message, 0, 0, 0);
+            break;
 
-// Crea un hilo
-CreateThread(0, 0, (LPTHREAD_START_ROUTINE)message, 0, 0, 0);
-break;
+        case DLL_PROCESS_DETACH:
+            // detach from process
+            break;
 
-case DLL_PROCESS_DETACH:
-// detach from process
-break;
+        case DLL_THREAD_ATTACH:
+            // attach to thread
+            break;
 
-case DLL_THREAD_ATTACH:
-// attach to thread
-break;
+        case DLL_THREAD_DETACH:
+            // detach from thread
+            break;
+    }
 
-case DLL_THREAD_DETACH:
-// detach from thread
-break;
+    return TRUE; // succesful
 }
-
-return TRUE; // succesful
-}
-[/code]
+----
 
 IMPORTANTE: si el programa en el vamos a realizar la inyección es de 32 bit, la DLL a inyectar debe ser compilada para 32 bit. Pasa lo mismo con los programas de 64 bit. No podemos inyectar una DLL compilada para 32 bit en un programa de 64 bit, ni viceversa.
 
@@ -195,14 +197,14 @@ Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro 
 
 == Referencias
 
-DLL - Wikipedia
-What is a DLL? - Microsoft
-DLL injection - Wikipedia
-FindWindowEx - Microsoft
+DLL - Wikipedia +
+What is a DLL? - Microsoft +
+DLL injection - Wikipedia +
+FindWindowEx - Microsoft +
 GetWindowThreadProcessId
-OpenProcess - Microsoft
-VirtualAllocEx - Microsoft
-WriteProcessMemory - Microsoft
-LoadLibrary - Microsoft
-GetProcAddress - Microsoft
+OpenProcess - Microsoft +
+VirtualAllocEx - Microsoft +
+WriteProcessMemory - Microsoft +
+LoadLibrary - Microsoft +
+GetProcAddress - Microsoft +
 CreateRemoteThread - MIcrosoft
