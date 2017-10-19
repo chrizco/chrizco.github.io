@@ -182,6 +182,9 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 *IMPORTANTE*: si el programa en el vamos a realizar la inyección es de 32 bit, la DLL a inyectar debe ser compilada para 32 bit. Pasa lo mismo con los programas de 64 bit. No podemos inyectar una DLL compilada para 32 bit en un programa de 64 bit, ni viceversa.
 
 == Demostración
+
+video::AoPvDXoEj5E[youtube]
+
 Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.
 
 == Referencias
