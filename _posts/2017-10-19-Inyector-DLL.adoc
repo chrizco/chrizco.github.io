@@ -1,4 +1,4 @@
-:hp-tags: c++, programacion, test
+:hp-tags: c++, programacion
 
 = Inyector DLL
 
@@ -183,7 +183,7 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 
 == Demostración
 
-video::AoPvDXoEj5E[youtube]
+video::AoPvDXoEj5E[youtube,width=500, height=375]
 
 Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.
 
