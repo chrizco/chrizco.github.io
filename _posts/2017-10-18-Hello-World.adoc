@@ -9,9 +9,8 @@
 
 = Hello World!
 
-Este es el primer post del blog, se dice que el primer paso es el más difícil, así que lo difícil ya esta hecho. En este blog se trataran diversos temas tales como: programación, electrónica, desarrollo de videojuegos, incluso series y películas relacionadas a estos temas.
+Este es el primer post del blog, se dice que el primer paso es el más difícil, así que lo difícil ya esta hecho. En este blog se trataran diversos temas, de las siguientes áreas: programación, electrónica, desarrollo de videojuegos, incluso series y películas relacionadas a estas áreas.
 
-Para abordar los temas antes mencionados, escribiré un post para ilustrar dichos temas, en el cual se explicaran conceptos, utilizando imágenes, videos. También incluirán fragmentos de código, se brindara el enlace del repositorio de los proyectos alojados en github.
-
+Para abordar dichos temas, escribiré un post para ilustrarlos, en los cuales explicaré conceptos, utilizando imágenes, videos. También se incluirán fragmentos de código, los proyectos realizados se alojaran en un repositorio en github para que puedan acceder a ellos.
 
 Sin aburrirlos más, les mando un saludos.
