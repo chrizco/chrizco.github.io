@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508491465126" />
+    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508491785384" />
 
     <link rel="canonical" href="https://chrizco.github.io/2017/10/20/Desarrolla-hacks-para-videojuegos.html" />
     <meta name="referrer" content="origin" />
@@ -167,7 +167,7 @@
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>En mi post anterior comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.</p>
+<p>En mi post <a href="http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/" target="_blank">anterior</a> comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.</p>
 </div>
 <div class="paragraph">
 <p>Empezare por explicar un par de cosas, para comprender mejor todo este rollo.</p>
@@ -195,6 +195,40 @@
 </div>
 <div class="paragraph">
 <p>Representación gráfica del puntero xPtr y la variable x en memoria.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">int x = 7;
+
+int *xPtr = &amp;x;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Cuando aparece un * en una declaración, indica que la variable que se esta declarando es un puntero. El &amp; es un operador unario que obtiene la dirección de memoria de su operando.</p>
+</div>
+<div class="paragraph">
+<p>Para desarrollar nuestros hacks para videojuegos, primero buscaremos los punteros que apunten a las variables que almacenan los puntos de vida, municiones, etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_herramientas">Herramientas</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://assault.cubers.net/download.html" target="_blank">AssaultCube 1.2.0.2</a></p>
+</li>
+<li>
+<p><a href="http://www.cheatengine.org/downloads.php" target="_blank">Cheat Engine</a></p>
+</li>
+<li>
+<p><a href="http://www.codeblocks.org/downloads/26" target="_blank">CodeBlocks</a></p>
+</li>
+<li>
+<p><a href="http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/" target="_blank">Inyector DLL</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -241,7 +275,7 @@
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508491465126"></script>
+    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508491785384"></script>
     
 
 </body>
