@@ -196,8 +196,8 @@ Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro 
 
 == Repositorios
 
-https://github.com/chrizco/MyDLL[DLL]
-https://github.com/chrizco/DLL-Injector[DLL Injector]
+https://github.com/chrizco/MyDLL[DLL^] +
+https://github.com/chrizco/DLL-Injector[DLL Injecto^] +
 
 == Referencias
 {nbsp} +
