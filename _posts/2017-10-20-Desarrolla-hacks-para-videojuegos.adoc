@@ -170,7 +170,7 @@ video::RmkjOVEFB3k[youtube,width=500, height=375]
 == Repositorio
 {empty}
 
-* https://github.com/[Hack Videogame^]
+* https://github.com/chrizco/Hack-Videogame[Hack Videogame^]
 
 Les queda de tarea la parte de la vida y granadas. Cuando terminen de hacer sus hacks, por favor tomen una screenshot o graben un pequeño video y háganmelo llegar, ya sea por los comentarios o la página de facebook.
 
