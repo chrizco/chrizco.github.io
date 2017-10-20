@@ -21,7 +21,7 @@ Existen diversas formas de inyectar DLL's, en este post explicare la más facíl
 Para el desarrollo de este programa haremos uso del lenguaje de programación C++, aun  que no hace falta conocerlo para seguir el post, basta con tener conocimientos de POO.
 
 == Herramientas
-
+{nbsp} +
     * IDE para C/C++ +
     * Compilador para C/C++
 
@@ -187,7 +187,9 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 
 == Demostración
 {nbsp} +
+
 video::AoPvDXoEj5E[youtube,width=500, height=375]
+
 {nbsp} +
 Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.
 
