@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Oct 2017 00:10:08 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Inyector DLL]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Oct 2017 00:12:11 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Inyector DLL]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.</p>
@@ -41,15 +41,10 @@ Es el programa que lleva acabo la inyección de la DLL.</p>
 <div class="sect1">
 <h2 id="_herramientas">Herramientas</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>IDE para C/C++<br></p>
-</li>
-<li>
-<p>Compilador para C/C++</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>&#160;<br>
+    * IDE para C/C +
+    * Compilador para C/C</p>
 </div>
 <div class="paragraph">
 <p>Yo utilizare CodeBlocks con MinGW (implementación de los compiladores GCC) de 32 bit para Windows, ambos los puedes descargar desde <a href="http://www.codeblocks.org/downloads/binaries" target="_blank">aquí</a>.</p>
@@ -229,9 +224,15 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 <h2 id="_demostraci_n">Demostración</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="500" height="375" src="https://www.youtube.com/embed/AoPvDXoEj5E?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="paragraph">
 <p>&#160;<br>
-video::AoPvDXoEj5E[youtube,width=500, height=375]
-&#160;<br>
 Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.</p>
 </div>
 </div>
