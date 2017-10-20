@@ -157,7 +157,13 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 
 == Demostración
 
+video::AoPvDXoEj5E[youtube,width=500, height=375]
 
+== Repositorio
+
+https://github.com/[Hack Videogame^]
+
+Les queda de tarea la parte de la vida y granadas. Cuando terminen de hacer sus hacks, por favor tomen una screenshot o graben un pequeño video y háganmelo llegar, ya sea por los comentarios o la página de facebook.
 
 
 
