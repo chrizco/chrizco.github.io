@@ -20,12 +20,11 @@ Existen diversas formas de inyectar DLL's, en este post explicare la más facíl
  
 Para el desarrollo de este programa haremos uso del lenguaje de programación C++, aun  que no hace falta conocerlo para seguir el post, basta con tener conocimientos de POO.
 
-== Herramientas
-{nbsp} +
+== Herramientas {nbsp} +
     * IDE para C/C++ +
     * Compilador para C/C++
 
-Yo utilizare CodeBlocks con MinGW (implementación de los compiladores GCC) de 32 bit para Windows, ambos los puedes descargar desde http://www.codeblocks.org/downloads/binaries[aquí^].
+Yo uilizare CodeBlocks con MinGW (implementación de los compiladores GCC) de 32 bit para Windows, ambos los puedes descargar desde http://www.codeblocks.org/downloads/binaries[aquí^].
  
 
 Sin más preámbulo pasemos a la parte que todos esperaban (aah sí XD).
