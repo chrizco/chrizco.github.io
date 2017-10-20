@@ -154,8 +154,10 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     return TRUE;
 }
 ----
-{empty}
+
+
 == Demostración
+
 {empty}
 
 video::RmkjOVEFB3k[youtube,width=500, height=375]
