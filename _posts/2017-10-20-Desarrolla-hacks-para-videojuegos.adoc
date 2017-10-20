@@ -1,5 +1,7 @@
 :hp-tags: hacks, programacion, c++
 
+:hp-image: https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg
+
 = Desarrolla hacks para videojuegos
 
 En mi post http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[anterior^] comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.
