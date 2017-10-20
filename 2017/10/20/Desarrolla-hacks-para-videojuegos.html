@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508492001269" />
+    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508493399163" />
 
     <link rel="canonical" href="https://chrizco.github.io/2017/10/20/Desarrolla-hacks-para-videojuegos.html" />
     <meta name="referrer" content="origin" />
@@ -217,18 +217,157 @@ int *xPtr = &amp;x;</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://assault.cubers.net/download.html" target="_blank">AssaultCube 1.2.0.2</a><br></p>
+<p><a href="http://assault.cubers.net/download.html" target="_blank">AssaultCube 1.2.0.2</a></p>
 </li>
 <li>
-<p><a href="http://www.cheatengine.org/downloads.php" target="_blank">Cheat Engine</a><br></p>
+<p><a href="http://www.cheatengine.org/downloads.php" target="_blank">Cheat Engine</a></p>
 </li>
 <li>
-<p><a href="http://www.codeblocks.org/downloads/26" target="_blank">CodeBlocks</a><br></p>
+<p><a href="http://www.codeblocks.org/downloads/26" target="_blank">CodeBlocks</a></p>
 </li>
 <li>
-<p><a href="http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/" target="_blank">Inyector DLL</a><br></p>
+<p><a href="http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/" target="_blank">Inyector DLL</a></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Cabe decir que trabajaremos sobre Windows. El hack que desarrollaremos sera para AssaultCube un videojuego multiplayer, first-person shooter.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_b_squeda_de_punteros">Búsqueda de punteros</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>*Nota:* este post no es un tutorial o manual sobre Cheat Engine, en caso de querer desarrollar hacks para otros videojuegos tener en cuanta que, la búsqueda de punteros puede ser más complicada y requiera ser más extensa o compleja. Hay muchos videotutoriales, tutoriales y manuales por internet para aprender más sobre Cheat Engine.</em></p>
+</div>
+<div class="paragraph">
+<p>Abrimos AssaultCube. En la parte inferior de la pantalla de juego podemos ver la vida y la balas, las cuales tienen un puntaje de 100 y 20 respectivamente, estos valores nos servirán para buscar los punteros que necesitamos.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/3.jpg" alt="3.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Abrimos Cheat Engine y hacemos click en el botón que esta encerrado por un recuadro que cambia de color, en la siguiente imagen esta de color rojo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/4.jpg" alt="4.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>A continuación aparecerá una pequeña ventana, con una lista de procesos. Seleccionaremos el que termine en ac_cliente.exe, hacemos doble click en el o presionamos el botón Open.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/5.jpg" alt="5.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Buscamos el valor de las balas, para ello escribimos el valor actual de las balas en el campo Value y hacemos click en First Scan.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/7.jpg" alt="7.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Regresamos a AssaultCube y gustamos balas.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/6.jpg" alt="6.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Regresamos a Cheat Engine, ahora buscaremos el número actual de balas que tenemos, lo escribimos en el campo Value y hacemos click en Next Scan. Han aparecido dos direcciones 08ADB5B8 y 0CECB26C (a ustedes no les tiene porque aparecer las mismas direcciones, pueden ser distintas), estas direcciones son las direcciones de las variables que contienen el valor de las balas, pero estas direcciones son dinámicas, es decir, si cerramos el videojuego o reiniciamos la computadora estas cambiaran, así no que nos sirven, para desarrollar nuestro hack necesitamos la dirección de un puntero, esta dirección debe ser estática y este puntero siempre deberá apuntar a la dirección de la variable que contiene el valor de las balas.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/9.jpg" alt="9.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Hacemos doble click sobre la primera dirección, para agregarla a la lista de direcciones.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/10.jpg" alt="10.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Hacemos click derecho sobre el primer y único elemento de la lista de direcciones y hacemos click izquierdo en la opción Pointer scan for this address.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/11.jpg" alt="11.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Aparecerán dos ventanas. En la ventana Pointerscanner scanoptions dejamos las configuraciones como están y hacemos click en OK.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/12.jpg" alt="12.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Iniciara la búsqueda de punteros, esta búsqueda puede tardar unos segundos o minutos.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/13.jpg" alt="13.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Al finalizar la búsqueda nos mostrar todos los punteros que apuntan a la dirección donde se encuentran las balas.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/14.jpg" alt="14.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Seleccionamos el elemento de la lista que tenga el nombre del proceso y menor número de offsets. En este caso seleccionare el segundo, hare doble click sobre el para agragarlo a la lista de direcciones, al agregar un puntero a la lista de direcciones Cheat Engine lo denota con P&#8594;.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/15.jpg" alt="15.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Vamos a comprobar que es el puntero correcto. Cerramos AssaultCube, lo ejecutamos nuevamente y abrimos su proceso desde Cheat Engine. En mi caso al cerrar y ejecutar de nuevo AssaultCube no cambio la primera dirección, pero pudiera cambiar, la segunda no debería, hacemos doble click sobre su valor (19) para cambiarlo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/16.jpg" alt="16.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Cambie su valor por 20.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/17.jpg" alt="17.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Hacemos doble click sobre el campo address del puntero. Se abrirá un pequeña ventana, en ella estarán los datos del puntero. Primero explicare que significa “ac_cliente.exe” esto hace referencia al entry point (punto de entrada) del ejecutable, este punto de entrada es aleatorio, cada que ejecutamos un programa puede cambiar.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/18.jpg" alt="18.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Después tenemos <strong>00109B74</strong>, esta es una dirección estática. Si sumamos el entry point más la dirección anterior el resultado sera la dirección en memoria de un puntero que contiene una direcciones dinámica, si le sumamos <strong>150</strong> esta dirección dinámica tendremos el dirección en memoria donde se almacena el valor de las balas.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/19.jpg" alt="19.jpg">
+</div>
 </div>
 </div>
 </div>
@@ -275,7 +414,7 @@ int *xPtr = &amp;x;</code></pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508492001269"></script>
+    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508493399163"></script>
     
 
 </body>
