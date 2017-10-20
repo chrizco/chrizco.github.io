@@ -32,11 +32,12 @@ Cuando aparece un * en una declaración, indica que la variable que se esta decl
 Para desarrollar nuestros hacks para videojuegos, primero buscaremos los punteros que apunten a las variables que almacenan los puntos de vida, municiones, etc.
 
 == Herramientas
+{empty}
 
-* http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^]
-* http://www.cheatengine.org/downloads.php[Cheat Engine^]
-* http://www.codeblocks.org/downloads/26[CodeBlocks^]
-* http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[Inyector DLL^]
+* http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^] +
+* http://www.cheatengine.org/downloads.php[Cheat Engine^] +
+* http://www.codeblocks.org/downloads/26[CodeBlocks^] +
+* http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[Inyector DLL^] +
 
 
 Cabe decir que trabajaremos sobre Windows. El hack que desarrollaremos sera para AssaultCube un videojuego multiplayer, first-person shooter.
