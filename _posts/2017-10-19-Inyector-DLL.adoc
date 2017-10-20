@@ -88,7 +88,7 @@ void Injector::inject(char *dll, char *windowTitle)
     FARPROC tsr = GetProcAddress(hModule, "LoadLibraryA");
 
     // Creamos un hilo en el proceso
-    CreateRemoteThread(process, 0, 0, (LPTHRED_START_ROUTINE)tsr,memory, 0, 0);
+    CreateRemoteThread(process, 0, 0, (LPTHREAD_START_ROUTINE)tsr,memory, 0, 0);
 }
 ----
 
