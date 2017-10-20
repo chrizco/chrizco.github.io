@@ -1,0 +1,18 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+= Desarrolla tus propios hacks para videojuegos
+
+En mi post anterior comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.
+
+Empezare por explicar un par de cosas, para comprender mejor todo este rollo.
+
+== Puntero
+
+Un puntero es una variable que almacena direcciones de memoria. También llamado apuntador. Por lo general, una variable contiene un valor específico. Sin embargo, un puntero contiene la dirección de memoria de una variable, la cual contiene un valor específico.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/1.png[]
