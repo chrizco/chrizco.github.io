@@ -18,6 +18,8 @@ image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images
 
 Representación gráfica del puntero xPtr y la variable x en memoria.
 
+
+==== Punteros en C++
 [source,cpp]
 ----
 int x = 7;
