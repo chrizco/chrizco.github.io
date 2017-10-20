@@ -9,7 +9,7 @@
 
 = Desarrolla hacks para videojuegos
 
-En mi post anterior comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.
+En mi post http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[anterior^] comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.
 
 Empezare por explicar un par de cosas, para comprender mejor todo este rollo.
 
@@ -24,3 +24,21 @@ Representación gráfica del puntero xPtr apuntando a la variable x.
 image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/2.png[]
 
 Representación gráfica del puntero xPtr y la variable x en memoria.
+
+[source,cpp]
+----
+int x = 7;
+ 
+int *xPtr = &x;
+----
+
+Cuando aparece un * en una declaración, indica que la variable que se esta declarando es un puntero. El & es un operador unario que obtiene la dirección de memoria de su operando.
+
+Para desarrollar nuestros hacks para videojuegos, primero buscaremos los punteros que apunten a las variables que almacenan los puntos de vida, municiones, etc.
+
+== Herramientas
+
+* http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^]
+* http://www.cheatengine.org/downloads.php[Cheat Engine^]
+* http://www.codeblocks.org/downloads/26[CodeBlocks^]
+* http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[Inyector DLL^]
