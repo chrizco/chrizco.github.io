@@ -38,7 +38,7 @@ Para desarrollar nuestros hacks para videojuegos, primero buscaremos los puntero
 
 == Herramientas
 
-* http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^]
-* http://www.cheatengine.org/downloads.php[Cheat Engine^]
-* http://www.codeblocks.org/downloads/26[CodeBlocks^]
-* http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[Inyector DLL^]
+- http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^] +
+- http://www.cheatengine.org/downloads.php[Cheat Engine^] +
+- http://www.codeblocks.org/downloads/26[CodeBlocks^] +
+- http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[Inyector DLL^] +
