@@ -21,7 +21,7 @@ Existen diversas formas de inyectar DLL's, en este post explicare la más facíl
 Para el desarrollo de este programa haremos uso del lenguaje de programación C++, aun  que no hace falta conocerlo para seguir el post, basta con tener conocimientos de POO.
 
 == Herramientas
-:blank: pass:[ +]
+{empty}
 
 * IDE para C/C++ +
 * Compilador para C/C++
