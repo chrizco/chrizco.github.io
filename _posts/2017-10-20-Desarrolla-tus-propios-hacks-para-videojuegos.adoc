@@ -14,3 +14,5 @@ Empezare por explicar un par de cosas, para comprender mejor todo este rollo.
 == Puntero
 
 Un puntero es una variable que almacena direcciones de memoria. También llamado apuntador. Por lo general, una variable contiene un valor específico. Sin embargo, un puntero contiene la dirección de memoria de una variable, la cual contiene un valor específico.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/1.png[]
