@@ -32,7 +32,7 @@ Cuando aparece un * en una declaración, indica que la variable que se esta decl
 Para desarrollar nuestros hacks para videojuegos, primero buscaremos los punteros que apunten a las variables que almacenan los puntos de vida, municiones, etc.
 
 == Herramientas
-
+{empty}
 * http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^]
 * http://www.cheatengine.org/downloads.php[Cheat Engine^]
 * http://www.codeblocks.org/downloads/26[CodeBlocks^]
@@ -163,9 +163,10 @@ video::AoPvDXoEj5E[youtube,width=500, height=375]
 {nbsp} +
 
 == Repositorio
-{nbsp} +
-https://github.com/[Hack Videogame^]
-{nbsp} +
+{empty}
+
+* https://github.com/[Hack Videogame^]
+
 Les queda de tarea la parte de la vida y granadas. Cuando terminen de hacer sus hacks, por favor tomen una screenshot o graben un pequeño video y háganmelo llegar, ya sea por los comentarios o la página de facebook.
 
 
