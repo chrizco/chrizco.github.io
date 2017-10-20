@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508493642620" />
+    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508493910370" />
 
     <link rel="canonical" href="https://chrizco.github.io/2017/10/20/Desarrolla-hacks-para-videojuegos.html" />
     <meta name="referrer" content="origin" />
@@ -374,6 +374,63 @@ int *xPtr = &amp;x;</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_proyecto_hack_videogame">Proyecto: Hack Videogame</h2>
+<div class="sectionbody">
+<div class="sect3">
+<h4 id="_main_cpp">Main.cpp</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">#include &lt;windows.h&gt;
+
+void Cheat()
+{
+    // Obtenemos el entry point
+    DWORD entryPoint = (DWORD)GetModuleHandle(NULL);
+    // Obtenemos la direccion del puntero estatico
+    DWORD baseAddress = *(DWORD*)(entryPoint + 0x109B74);
+    // Obtenemos la direccion donde se almacenan las balas
+    DWORD bullets = baseAddress + 0x150;
+    while (true)
+    {
+        // Asignamos el numero de balas
+        *(DWORD*)bullets = 20;
+        // Suspendemos la ejecución 200 milisegundos
+        Sleep(200);
+    }
+}
+
+BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+{
+    switch (fdwReason)
+    {
+        case DLL_PROCESS_ATTACH:
+            // Ejecutamos la función Cheat en un hilo
+            CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Cheat, 0, 0, 0);
+            break;
+
+        case DLL_PROCESS_DETACH:
+            break;
+
+        case DLL_THREAD_ATTACH:
+            break;
+
+        case DLL_THREAD_DETACH:
+            break;
+    }
+    return TRUE;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_demostraci_n">Demostración</h2>
+<div class="sectionbody">
+
+</div>
+</div>
     </section>
 
   </article>
@@ -417,7 +474,7 @@ int *xPtr = &amp;x;</code></pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508493642620"></script>
+    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508493910370"></script>
     
 
 </body>
