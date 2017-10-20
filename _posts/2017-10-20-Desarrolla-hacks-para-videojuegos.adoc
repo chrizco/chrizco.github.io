@@ -1,10 +1,3 @@
-// = Your Blog title
-// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
-// :hp-image: /covers/cover.png
-// :published_at: 2019-01-31
-// :hp-tags: HubPress, Blog, Open_Source,
-// :hp-alt-title: My English Title
-
 :hp-tags: hacks, programacion, c++
 
 = Desarrolla hacks para videojuegos
@@ -38,7 +31,89 @@ Para desarrollar nuestros hacks para videojuegos, primero buscaremos los puntero
 
 == Herramientas
 
-- http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^] +
-- http://www.cheatengine.org/downloads.php[Cheat Engine^] +
-- http://www.codeblocks.org/downloads/26[CodeBlocks^] +
-- http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[Inyector DLL^] +
+* http://assault.cubers.net/download.html[AssaultCube 1.2.0.2^]
+* http://www.cheatengine.org/downloads.php[Cheat Engine^]
+* http://www.codeblocks.org/downloads/26[CodeBlocks^]
+* http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/[Inyector DLL^]
+
+
+Cabe decir que trabajaremos sobre Windows. El hack que desarrollaremos sera para AssaultCube un videojuego multiplayer, first-person shooter.
+
+== Búsqueda de punteros
+
+_*Nota:* este post no es un tutorial o manual sobre Cheat Engine, en caso de querer desarrollar hacks para otros videojuegos tener en cuanta que, la búsqueda de punteros puede ser más complicada y requiera ser más extensa o compleja. Hay muchos videotutoriales, tutoriales y manuales por internet para aprender más sobre Cheat Engine._
+
+Abrimos AssaultCube. En la parte inferior de la pantalla de juego podemos ver la vida y la balas, las cuales tienen un puntaje de 100 y 20 respectivamente, estos valores nos servirán para buscar los punteros que necesitamos.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/3.jpg[]
+
+Abrimos Cheat Engine y hacemos click en el botón que esta encerrado por un recuadro que cambia de color, en la siguiente imagen esta de color rojo.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/4.jpg[]
+
+A continuación aparecerá una pequeña ventana, con una lista de procesos. Seleccionaremos el que termine en ac_cliente.exe, hacemos doble click en el o presionamos el botón Open.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/5.jpg[]
+
+Buscamos el valor de las balas, para ello escribimos el valor actual de las balas en el campo Value y hacemos click en First Scan.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/7.jpg[]
+
+Regresamos a AssaultCube y gustamos balas.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/6.jpg[]
+
+Regresamos a Cheat Engine, ahora buscaremos el número actual de balas que tenemos, lo escribimos en el campo Value y hacemos click en Next Scan. Han aparecido dos direcciones 08ADB5B8 y 0CECB26C (a ustedes no les tiene porque aparecer las mismas direcciones, pueden ser distintas), estas direcciones son las direcciones de las variables que contienen el valor de las balas, pero estas direcciones son dinámicas, es decir, si cerramos el videojuego o reiniciamos la computadora estas cambiaran, así no que nos sirven, para desarrollar nuestro hack necesitamos la dirección de un puntero, esta dirección debe ser estática y este puntero siempre deberá apuntar a la dirección de la variable que contiene el valor de las balas.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/9.jpg[]
+
+Hacemos doble click sobre la primera dirección, para agregarla a la lista de direcciones.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/10.jpg[]
+
+Hacemos click derecho sobre el primer y único elemento de la lista de direcciones y hacemos click izquierdo en la opción Pointer scan for this address.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/11.jpg[]
+
+Aparecerán dos ventanas. En la ventana Pointerscanner scanoptions dejamos las configuraciones como están y hacemos click en OK.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/12.jpg[]
+
+Iniciara la búsqueda de punteros, esta búsqueda puede tardar unos segundos o minutos.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/13.jpg[]
+
+Al finalizar la búsqueda nos mostrar todos los punteros que apuntan a la dirección donde se encuentran las balas.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/14.jpg[]
+
+Seleccionamos el elemento de la lista que tenga el nombre del proceso y menor número de offsets. En este caso seleccionare el segundo, hare doble click sobre el para agragarlo a la lista de direcciones, al agregar un puntero a la lista de direcciones Cheat Engine lo denota con P->.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/15.jpg[]
+
+Vamos a comprobar que es el puntero correcto. Cerramos AssaultCube, lo ejecutamos nuevamente y abrimos su proceso desde Cheat Engine. En mi caso al cerrar y ejecutar de nuevo AssaultCube no cambio la primera dirección, pero pudiera cambiar, la segunda no debería, hacemos doble click sobre su valor (19) para cambiarlo.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/16.jpg[]
+
+Cambie su valor por 20.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/17.jpg[]
+
+Hacemos doble click sobre el campo address del puntero. Se abrirá un pequeña ventana, en ella estarán los datos del puntero. Primero explicare que significa “ac_cliente.exe” esto hace referencia al entry point (punto de entrada) del ejecutable, este punto de entrada es aleatorio, cada que ejecutamos un programa puede cambiar.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/18.jpg[]
+
+Después tenemos *00109B74*, esta es una dirección estática. Si sumamos el entry point más la dirección anterior el resultado sera la dirección en memoria de un puntero que contiene una direcciones dinámica, si le sumamos *150* esta dirección dinámica tendremos el dirección en memoria donde se almacena el valor de las balas.
+
+image::https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/19.jpg[]
+
+
+
+
+
+
+
+
+
+
+
