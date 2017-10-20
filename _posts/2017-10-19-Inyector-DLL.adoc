@@ -1,4 +1,6 @@
-:hp-tags: c++, programacion
+:hp-tags: desktop, programacion, cpp
+
+:hp-image: https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg
 
 = Inyector DLL
 
