@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Oct 2017 09:21:13 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Desarrolla hacks para videojuegos]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Oct 2017 09:24:25 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Desarrolla hacks para videojuegos]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>En mi post anterior comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.</p>
@@ -19,8 +19,19 @@
 <img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/1.png" alt="1.png">
 </div>
 </div>
+<div class="paragraph">
+<p>Representación gráfica del puntero xPtr apuntando a la variable x.</p>
 </div>
-</div>]]></description><link>https://chrizco.github.io/2017/10/20/Desarrolla-hacks-para-videojuegos.html</link><guid isPermaLink="true">https://chrizco.github.io/2017/10/20/Desarrolla-hacks-para-videojuegos.html</guid><dc:creator><![CDATA[Chris Cornejo]]></dc:creator><pubDate>Fri, 20 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Inyector DLL]]></title><description><![CDATA[<div id="preamble">
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/post3/2.png" alt="2.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Representación gráfica del puntero xPtr y la variable x en memoria.</p>
+</div>
+</div>
+</div>]]></description><link>https://chrizco.github.io/2017/10/20/Desarrolla-hacks-para-videojuegos.html</link><guid isPermaLink="true">https://chrizco.github.io/2017/10/20/Desarrolla-hacks-para-videojuegos.html</guid><category><![CDATA[hacks]]></category><category><![CDATA[programacion]]></category><category><![CDATA[c++]]></category><dc:creator><![CDATA[Chris Cornejo]]></dc:creator><pubDate>Fri, 20 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Inyector DLL]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL.</p>
