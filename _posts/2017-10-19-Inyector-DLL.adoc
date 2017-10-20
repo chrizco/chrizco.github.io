@@ -194,6 +194,11 @@ video::AoPvDXoEj5E[youtube,width=500, height=375]
 {nbsp} +
 Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.
 
+== Repositorios
+
+https://github.com/chrizco/MyDLL[DLL]
+https://github.com/chrizco/DLL-Injector[DLL Injector]
+
 == Referencias
 {nbsp} +
 https://es.wikipedia.org/wiki/Biblioteca_de_enlace_din%C3%A1mico[DLL - Wikipedia^] +
