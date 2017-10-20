@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Oct 2017 09:56:39 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Desarrolla hacks para videojuegos]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Oct 2017 10:00:42 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Desarrolla hacks para videojuegos]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>En mi post <a href="http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/" target="_blank">anterior</a> comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.</p>
@@ -30,6 +30,8 @@
 <div class="paragraph">
 <p>Representación gráfica del puntero xPtr y la variable x en memoria.</p>
 </div>
+<div class="sect3">
+<h4 id="_punteros_en_c">Punteros en C++</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-cpp" data-lang="cpp">int x = 7;
@@ -42,6 +44,7 @@ int *xPtr = &amp;x;</code></pre>
 </div>
 <div class="paragraph">
 <p>Para desarrollar nuestros hacks para videojuegos, primero buscaremos los punteros que apunten a las variables que almacenan los puntos de vida, municiones, etc.</p>
+</div>
 </div>
 </div>
 </div>
