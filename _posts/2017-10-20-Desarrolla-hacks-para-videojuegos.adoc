@@ -20,6 +20,7 @@ Representación gráfica del puntero xPtr y la variable x en memoria.
 
 
 ==== Punteros en C++
+{nbsp} +
 [source,cpp]
 ----
 int x = 7;
