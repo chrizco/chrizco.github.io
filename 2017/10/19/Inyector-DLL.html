@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508458008478" />
+    <link rel="stylesheet" type="text/css" href="//chrizco.github.io/themes/uno/assets/css/uno.css?v=1508458208364" />
 
     <link rel="canonical" href="https://chrizco.github.io/2017/10/19/Inyector-DLL.html" />
     <meta name="referrer" content="origin" />
@@ -33,7 +33,7 @@
     <meta property="og:site_name" content="Blog de Chris" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Inyector DLL" />
-    <meta property="og:description" content="A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) &amp;#160; &amp;#160; Son archivos que contienen código ejecutable" />
+    <meta property="og:description" content="A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) &amp;#160; Son archivos que contienen código ejecutable y" />
     <meta property="og:url" content="https://chrizco.github.io/2017/10/19/Inyector-DLL.html" />
     <meta property="article:published_time" content="2017-10-19T00:00:00.000Z" />
     <meta property="article:tag" content="c++" />
@@ -41,7 +41,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Inyector DLL" />
-    <meta name="twitter:description" content="A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) &amp;#160; &amp;#160; Son archivos que contienen código ejecutable" />
+    <meta name="twitter:description" content="A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) &amp;#160; Son archivos que contienen código ejecutable y" />
     <meta name="twitter:url" content="https://chrizco.github.io/2017/10/19/Inyector-DLL.html" />
     
     <script type="application/ld+json">
@@ -60,7 +60,7 @@
     "url": "https://chrizco.github.io/2017/10/19/Inyector-DLL.html",
     "datePublished": "2017-10-19T00:00:00.000Z",
     "keywords": "c++, programacion",
-    "description": "A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) &amp;#160; &amp;#160; Son archivos que contienen código ejecutable"
+    "description": "A penas comenzar algunos estarán rodeados de dudas y preguntas, así que, iniciaré dando algunas definiciones de manera rápida y ligera, para que todos marchemos al mismo paso. Este post estará dedicado al desarrollo de un Inyector DLL. DLL (Dynamic Link Library) &amp;#160; Son archivos que contienen código ejecutable y"
 }
     </script>
 
@@ -175,7 +175,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>&#160;<br>
-&#160;<br>
 Son archivos que contienen código ejecutable y datos que pueden ser usados por uno o más programas. Mediante el uso de DLL, un programa puede ser modularizado en componentes separados. Exclusivos de los sistemas operativos Windows, tienen ".dll" como extensión.</p>
 </div>
 </div>
@@ -184,7 +183,8 @@ Son archivos que contienen código ejecutable y datos que pueden ser usados por 
 <h2 id="_inyecci_n_dll">Inyección DLL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Es una técnica utilizada para ejecutar código dentro de otro proceso. Comúnmente es utilizada para influir o alterar el comportamiento de un programa.</p>
+<p>&#160;<br>
+Es una técnica utilizada para ejecutar código dentro de otro proceso. Comúnmente es utilizada para influir o alterar el comportamiento de un programa.</p>
 </div>
 </div>
 </div>
@@ -192,7 +192,8 @@ Son archivos que contienen código ejecutable y datos que pueden ser usados por 
 <h2 id="_inyector">Inyector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Es el programa que lleva acabo la inyección de la DLL.</p>
+<p>&#160;<br>
+Es el programa que lleva acabo la inyección de la DLL.</p>
 </div>
 <div class="paragraph">
 <p>Existen diversas formas de inyectar DLL&#8217;s, en este post explicare la más facíl. Esta consiste en lo siguiente; Windows provee funciones para crear un hilo en cierta posición de memoria de un proceso externo, para ello reservamos memoria en el proceso, escribimos en ella la ruta de la DLL que queremos inyectar y creamos un hilo pasandole como parámetros el proceso, la dirección de memoria donde se encuentra la función LoadLibrary y la dirección de memoria que reservamos que escribimos anteriormente.</p>
@@ -205,10 +206,6 @@ Son archivos que contienen código ejecutable y datos que pueden ser usados por 
 <div class="sect1">
 <h2 id="_herramientas">Herramientas</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>&#160;<br>
-&#160;<br></p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -396,13 +393,11 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 <div class="sect1">
 <h2 id="_demostraci_n">Demostración</h2>
 <div class="sectionbody">
-<div class="videoblock">
-<div class="content">
-<iframe width="500" height="375" src="https://www.youtube.com/embed/AoPvDXoEj5E?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
 <div class="paragraph">
-<p>Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.</p>
+<p>&#160;<br>
+video::AoPvDXoEj5E[youtube,width=500, height=375]
+&#160;<br>
+Seguramente más de uno esté pensando, ¿Qué utilidad tiene agregar un cuadro de dialogo?. Una ballena se devora un mordisco a la vez. En mi siguiente post haremos más que agregar un simple cuadro de dialogo, haremos nuestros propios hacks para videojuegos.</p>
 </div>
 </div>
 </div>
@@ -410,7 +405,8 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 <h2 id="_referencias">Referencias</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://es.wikipedia.org/wiki/Biblioteca_de_enlace_din%C3%A1mico" target="_blank">DLL - Wikipedia</a><br>
+<p>&#160;<br>
+<a href="https://es.wikipedia.org/wiki/Biblioteca_de_enlace_din%C3%A1mico" target="_blank">DLL - Wikipedia</a><br>
 <a href="https://support.microsoft.com/en-us/kb/815065" target="_blank">What is a DLL? - Microsof</a><br>
 <a href="https://en.wikipedia.org/wiki/DLL_injection" target="_blank">DLL injection - Wikipedi</a><br>
 <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633500(v=vs.85).aspx" target="_blank">FindWindowEx - Microsof</a><br>
@@ -467,7 +463,7 @@ BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508458008478"></script>
+    <script type="text/javascript" src="//chrizco.github.io/themes/uno/assets/js/main.js?v=1508458208364"></script>
     
 
 </body>
