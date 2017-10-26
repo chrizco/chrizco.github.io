@@ -203,14 +203,15 @@ https://github.com/chrizco/DLL-Injector[Proyecto DLL Injector^] +
 
 == Referencias
 {nbsp} +
+
 https://es.wikipedia.org/wiki/Biblioteca_de_enlace_din%C3%A1mico[DLL - Wikipedia^] +
-https://support.microsoft.com/en-us/kb/815065[What is a DLL? - Microsof^] +
-https://en.wikipedia.org/wiki/DLL_injection[DLL injection - Wikipedi^] +
-https://msdn.microsoft.com/en-us/library/windows/desktop/ms633500(v=vs.85).aspx[FindWindowEx - Microsof^] +
-https://msdn.microsoft.com/en-us/library/windows/desktop/ms633522(v=vs.85).aspx[GetWindowThreadProcessId - Microsof^] +
-https://msdn.microsoft.com/en-us/library/windows/desktop/ms684320(v=vs.85).aspx[OpenProcess - Microsof^] +
-https://msdn.microsoft.com/en-us/library/windows/desktop/aa366890(v=vs.85).aspx[VirtualAllocEx - Microsof^] +
-https://msdn.microsoft.com/en-us/library/windows/esktop/ms681674(v=vs.85).aspx[WriteProcessMemory - Microsof^] +
+https://support.microsoft.com/en-us/kb/815065[What is a DLL? - Microsoft^] +
+https://en.wikipedia.org/wiki/DLL_injection[DLL injection - Wikipedia^] +
+https://msdn.microsoft.com/en-us/library/windows/desktop/ms633500(v=vs.85).aspx[FindWindowEx - Microsoft^] +
+https://msdn.microsoft.com/en-us/library/windows/desktop/ms633522(v=vs.85).aspx[GetWindowThreadProcessId - Microsoft^] +
+https://msdn.microsoft.com/en-us/library/windows/desktop/ms684320(v=vs.85).aspx[OpenProcess - Microsoft^] +
+https://msdn.microsoft.com/en-us/library/windows/desktop/aa366890(v=vs.85).aspx[VirtualAllocEx - Microsoft^] +
+https://msdn.microsoft.com/en-us/library/windows/esktop/ms681674(v=vs.85).aspx[WriteProcessMemory - Microsoft^] +
 https://msdn.microsoft.com/en-us/library/windows/desktop/ms684175(v=vs.85).aspx[LoadLibrary - Microsoft^] +
 https://msdn.microsoft.com/en-us/library/windows/desktop/ms683212(v=vs.85).aspx[GetProcAddress - Microsoft^] +
 https://msdn.microsoft.com/en-us/library/windows/desktop/ms682437(v=vs.85).aspx[CreateRemoteThread - MIcrosoft^] +
