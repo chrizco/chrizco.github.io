@@ -46,7 +46,21 @@ Cabe decir que trabajaremos sobre Windows. El hack que desarrollaremos sera para
 
 == Búsqueda de punteros
 {nbsp} +
-> > _Nota: este post no es un tutorial o manual sobre Cheat Engine, en caso de querer desarrollar hacks para otros videojuegos tener en cuanta que, la búsqueda de punteros puede ser más complicada y requiera ser más extensa o compleja. Hay muchos videotutoriales, tutoriales y manuales por internet para aprender más sobre Cheat Engine._
+_Nota: este post no es un tutorial o manual sobre Cheat Engine, en caso de querer desarrollar hacks para otros videojuegos tener en cuanta que, la búsqueda de punteros puede ser más complicada y requiera ser más extensa o compleja. Hay muchos videotutoriales, tutoriales y manuales por internet para aprender más sobre Cheat Engine._
+
+> > What's new?
+>
+> I've got Markdown in my AsciiDoc!
+>
+> > Like what?
+>
+> * Blockquotes
+> * Headings
+> * Fenced code blocks
+>
+> > Is there more?
+>
+> Yep. AsciiDoc and Markdown share a lot of common syntax already.
 
 Abrimos AssaultCube. En la parte inferior de la pantalla de juego podemos ver la vida y la balas, las cuales tienen un puntaje de 100 y 20 respectivamente, estos valores nos servirán para buscar los punteros que necesitamos.
 
