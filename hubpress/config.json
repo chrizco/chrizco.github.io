@@ -28,7 +28,7 @@
     "title": "Blog de Chris",
     "description": "Apasionado por el desarrollo de software, los videojuegos y series de tv",
     "logo": "https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/logo.jpg",
-    "cover": "http://drive.google.com/uc?export=view&id=0BzcBgGKt3WOCd3hELV9lWkJJZzg",
+    "cover": "https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg",
     "delay": "",
     "postsPerPage": "5",
     "googleAnalytics": "UA-108687178-1",
