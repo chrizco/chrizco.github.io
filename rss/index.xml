@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Oct 2017 06:58:52 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Desarrolla hacks para videojuegos]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog de Chris]]></title><description><![CDATA[Apasionado por el desarrollo de software, los videojuegos y series de tv]]></description><link>https://chrizco.github.io</link><image><url>https://raw.githubusercontent.com/chrizco/chrizco.github.io/master/images/cover-image.jpg</url><title>Blog de Chris</title><link>https://chrizco.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Oct 2017 07:00:32 GMT</lastBuildDate><atom:link href="https://chrizco.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Desarrolla hacks para videojuegos]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>En mi post <a href="http://blog-quickhub.rhcloud.com/2016/04/29/inyeccion-de-dll/" target="_blank">anterior</a> comente que haríamos nuestros propios hacks para videojuegos, ese el es motivo de este post. Para esto sólo escribiremos un par de líneas de código, así que, no es necesario ser un experto programando, con tener saber lo básico basta. Usaremos C++ para el desarrollo de nuestros hacks, este tipo de hacks nos permitirán controlar las variables de los videojuegos, donde se almacenan lo puntos de vida, municiones, mana, etc.</p>
@@ -81,7 +81,51 @@ int *xPtr = &amp;x;</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>&#160;<br>
-&gt; &gt; <em>Nota: este post no es un tutorial o manual sobre Cheat Engine, en caso de querer desarrollar hacks para otros videojuegos tener en cuanta que, la búsqueda de punteros puede ser más complicada y requiera ser más extensa o compleja. Hay muchos videotutoriales, tutoriales y manuales por internet para aprender más sobre Cheat Engine.</em></p>
+<em>Nota: este post no es un tutorial o manual sobre Cheat Engine, en caso de querer desarrollar hacks para otros videojuegos tener en cuanta que, la búsqueda de punteros puede ser más complicada y requiera ser más extensa o compleja. Hay muchos videotutoriales, tutoriales y manuales por internet para aprender más sobre Cheat Engine.</em></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>What&#8217;s new?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve got Markdown in my AsciiDoc!</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Like what?</p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Blockquotes</p>
+</li>
+<li>
+<p>Headings</p>
+</li>
+<li>
+<p>Fenced code blocks</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Is there more?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Yep. AsciiDoc and Markdown share a lot of common syntax already.</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>Abrimos AssaultCube. En la parte inferior de la pantalla de juego podemos ver la vida y la balas, las cuales tienen un puntaje de 100 y 20 respectivamente, estos valores nos servirán para buscar los punteros que necesitamos.</p>
